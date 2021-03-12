@@ -7,10 +7,13 @@ import Card from 'elements/Card'
 import Lists from 'elements/Lists'
 import Feature from 'parts/Feature'
 import Button from 'elements/Button'
+import Footer from 'parts/Footer'
 import HeroImage from 'assets/images/hero-image.png'
 import FeatureTile01 from 'assets/images/feature-tile-icon-01.svg'
 import FeatureTile02 from 'assets/images/feature-tile-icon-02.svg'
 import FeatureTile03 from 'assets/images/feature-tile-icon-03.svg'
+import Logo from 'assets/images/logo.svg'
+
 export default function Homepage() {
     const features = [
         {
@@ -272,6 +275,7 @@ export default function Homepage() {
                     </div>
                 </Section>
             </main>
+            <Footer></Footer>
         </div>
     )
 }
