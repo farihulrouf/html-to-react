@@ -3,8 +3,10 @@ import Fade from 'react-reveal/Fade'
 import Section from 'elements/Section'
 import Header from 'parts/Header'
 import Clients from 'parts/Clients'
-
+import Card from 'elements/Card'
+import Lists from 'elements/Lists'
 import Feature from 'parts/Feature'
+import Button from 'elements/Button'
 import HeroImage from 'assets/images/hero-image.png'
 import FeatureTile01 from 'assets/images/feature-tile-icon-01.svg'
 import FeatureTile02 from 'assets/images/feature-tile-icon-02.svg'
@@ -33,6 +35,110 @@ export default function Homepage() {
         },
         
     ]
+
+
+    const listPricing = [
+        {
+            price: 27,
+            currencySymbol: "$",
+            description: "lorem isum is conson text",
+            features: [
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+                {
+                    isChecked: false,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: false,
+                    content: "Exception sint concat velit"
+                }
+
+
+            ]
+        },
+
+        {
+            price: 47,
+            currencySymbol: "$",
+            description: "lorem isum is conson text",
+            features: [
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+                {
+                    isChecked: false,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: false,
+                    content: "Exception sint concat velit"
+                }
+
+
+            ]
+        },
+
+        {
+            price: 77,
+            currencySymbol: "$",
+            description: "lorem isum is conson text",
+            features: [
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: true,
+                    content: "Exception sint concat velit"
+                },
+                {
+                    isChecked: false,
+                    content: "Exception sint concat velit"
+                },
+
+                {
+                    isChecked: false,
+                    content: "Exception sint concat velit"
+                }
+
+
+            ]
+        }
+    ]
+
+
     return (
         <div className="body-wrap">
             <Header></Header>
@@ -112,6 +218,55 @@ export default function Homepage() {
                                             of a document or visual presentation.
                                         </p>
                                     </div>
+                                </div>
+
+                                <div className="tiles-wrap">
+                                    {
+                                        listPricing.map((list, index) => 
+                                            <Card hasShadow>
+                                                <div class="pricing-item-content">
+											<div
+												className="pricing-item-header pb-24 mb-24"
+											>
+												<div
+													className="pricing-item-price mb-4"
+												>
+													<span
+														className="pricing-item-price-currency h2"
+                                    >{list.currencySymbol}</span
+													><span
+														className="pricing-item-price-amount h1 pricing-switchable"
+														data-pricing-monthly="34"
+														data-pricing-yearly="27"
+                                    >{list.price}</span
+													>
+												</div>
+												<div
+													className="text-xs text-color-low"
+												>
+													{list.description}
+												</div>
+											</div>
+											<div
+												className="pricing-item-features mb-40"
+											>
+												<div
+													className="pricing-item-features-title h6 text-xs text-color-high mb-24"
+												>
+													What’s included
+                                                    <Lists data={list.features} isSmall className="pricing-item-features-list mb-32">
+
+                                                    </Lists>
+												</div>
+												
+											</div>
+                                            <div className="pricing-item-cta mb-8">
+                                                <Button isPrimary isBlock>Start free trial</Button>
+                                            </div>
+										</div>
+                                            </Card>
+                                        )
+                                    }
                                 </div>
                         </div>
                     </div>

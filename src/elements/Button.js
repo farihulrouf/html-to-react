@@ -5,6 +5,7 @@ export default function Button(props) {
     if (props.isPrimary) className.push("button-primary"); //gabungkan array
     if (props.isWideMobile) className.push("button-wide-mobile"); //gabungkan array
     if (props.isSmall) className.push("button-sm"); //gabungkan array
+    if (props.isBlock) className.push("button-block");
     
     return <button className={className.join(" ")}>{props.children}     
     </button>;
@@ -13,5 +14,6 @@ export default function Button(props) {
 Button.propTypes = {
     isPrimary: propTypes.bool,
     isWideMobile: propTypes.bool,
+    isBlock: propTypes.bool,
     isSmall: propTypes.bool,
 };
